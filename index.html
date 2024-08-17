@@ -1,0 +1,764 @@
+<!DOCTYPE html><html lang="id"><head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>PLISSPA</title>
+    <meta name="description" content="PLISSPA adalah Distributor &amp; Pulsa Murah All Operator yang menyediakan H2H Server Pulsa termurah dengan berbagai macam variasi produk Pulsa Elektrik All Operator, Token PLN Prabayar, dan Voucher Game Online. Semua produk yang kami tawarkan dapat digunakan di seluruh wilayah Indonesia karena kami adalah distributor pulsa murah berskala nasional. Keuntungan terbaik bagi Anda karena menjadi member Pulsa SeruPay adalah GRATIS / tidak dipungut biaya kecuali Isi Saldo.">
+    <meta name="keywords" content="Pulsa, Voucher, Game, FF, ML, PUBG, Murah">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="images/logo_plisspa.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logo_plisspa.png"> 
+    <link rel="stylesheet" href="css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/theme.css"> 
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/all.css">
+    <link rel="manifest" href="__manifest.json">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body class="bg-primary">
+
+    <!-- loader -->
+    <div id="loader">
+     <img src="images/load.gif" width="100">
+    </div>
+
+    <!-- App Header -->
+    <div class="appHeader no-border transparent position-absolute text-light bold">
+    </div>
+    <!-- * App Header -->
+     
+    <!-- openMenu Action Sheet -->
+    <div class="modal fade action-sheet" id="openMenu" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Menu</h5>
+                </div>
+                <div class="modal-body">
+                    <ul class="action-button-list">
+                        <li>
+                            <a href="https://app.plisspa.id/" class="btn btn-list text-primary" style="justify-content: center">
+                                <span class="text-center">Kembali Ke Beranda</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://app.plisspa.id/page/about-us" class="btn btn-list text-primary" style="justify-content: center">
+                                <span>Hubungi Kami</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://app.plisspa.id/page/terms-conditions" class="btn btn-list text-primary" style="justify-content: center">
+                                <span>Syarat Dan Ketentuan</span>
+                            </a>
+                        </li>
+                        <li class="action-divider"></li>
+                        <li>
+                            <a href="#" class="btn btn-list text-primary" data-dismiss="modal" style="justify-content: center">
+                                <span>Close</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- * openMenu Action Sheet --><style>
+    .login-form {
+      max-width: 500px;
+      margin: auto;
+      text-align: center;
+    }
+    
+    .section-login {
+      margin: 30px 36px 40px 36px !important;
+    }
+    
+    .login-form-bottom {
+      max-width: 500px;
+      margin: auto;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    
+    .login-item {
+      padding: 20px;
+    }
+
+    .login-form .form-image {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+    }
+    .login-form .form-group.basic .form-control {
+        background: transparent;
+        border: none;
+        padding: 0 0 0 0;
+        border-radius: 0;
+        height: 40px;
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+        font-size: 22px;
+        letter-spacing: .05rem
+    }
+    .login-form .icon {
+        font-size: 35px !important; 
+    }
+    .login-form hr {
+        margin: 0 42%;
+        border-top: 2px solid var(--color-theme-soft) !important;
+    }
+    .login-form .form-group .form-control:focus hr {
+        border-top-color: #fff !important;
+    }
+    .login-form .form-group .form-control::placeholder {
+        color: #6c757d !important;
+        font-weight: bold;
+        letter-spacing: .075em;
+        opacity: 1;
+        font-size: 20px
+    }
+
+    .form-control-wrap, .form-control-group {
+        position: relative;
+    }
+    .form-control-wrap .form-control {
+        font-size: 20px;
+        color: #000;
+        font-weight: 500;
+        letter-spacing: .075em;
+    }
+    .form-clip, .form-text-hint {
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        bottom: 1px;
+        display: flex;
+        align-items: center;
+        color: #854fff;
+        padding-left: 1rem;
+        padding-right: .75rem;
+        background: #fff;
+        border-radius: 4px;
+    }
+    .form-icon {
+        position: absolute;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        transform: translateY(-50%);
+        width: calc(3rem + 24px);
+        height: calc(3rem + 24px)
+    }
+
+    .form-icon .icon {
+        font-size: 16px;
+        color: #8094ae
+    }
+
+    .form-icon+.form-control {
+        padding-left: calc(1rem + 24px)
+    }
+
+    .form-icon-right {
+        left: auto;
+        right: -1px
+    }
+
+    .form-icon-right+.form-control {
+        padding-left: 1rem;
+        padding-right: calc(1rem + 24px)
+    }
+    .form-icon-left {
+        right: auto;
+        left: -1px
+    }
+
+    .form-icon-left+.form-control {
+        padding-right: 1rem;
+        padding-left: calc(3rem + 24px)
+    }
+    .number-box {
+      background: transparent;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      border: 2px solid #fff;
+      border-radius: 100%;
+      font-size: 2rem !important;
+      font-weight: 700;
+    }
+    .number-box.no-border {
+      border: 0
+    }
+    .number-box:focus {
+      color: #FFF !important;
+      background-color: var(--color-theme) !important;
+    }
+
+    .number-box:hover {
+      color: var(--color-theme) !important;
+      background-color: #FFF !important;
+    }
+
+    .form-control:focus {
+        color: #000;
+        box-shadow: none;
+    }
+    
+    .imaged.login {
+      border-radius: 0 !important;
+      padding-bottom: 40px;
+    }
+    
+    p.login {
+      font-size: 15px;
+    }
+    
+    .modalbox .modal-dialog .modal-content .modal-body-login {
+      margin: 20px;
+    }
+</style>    <div id="appCapsule">
+        <div class="rgs-auth-login">
+                 <style>
+    .close-pin {
+        text-align: right!important;
+        font-size: xx-large;
+        color: #4F5050;
+        opacity: 0.5;
+    }
+    a {
+        color: #4F5050;
+    }
+    a:hover, a:active, a:focus {
+        color: #4F5050;
+    }
+</style>  
+    <div class="carousel-slider owl-carousel owl-theme pt-5 mt-5">
+    <div class="item login-item">
+        <div class="iconedbox imaged w-75 login">
+            <img src="images/store.svg" style="height: 11rem">
+        </div>
+        <h3 class="text-light">Transaksi Lebih Mudah</h3>
+        <p class="login">Belanja kebutuhan kamu dimana saja dan kapan saja</p>
+    </div>
+    <div class="item login-item">
+        <div class="iconedbox imaged w-75 login">
+            <img src="images/payment.svg" style="height: 11rem">
+        </div>
+        <h3 class="text-light">Pembayaran Cepat Dan Aman</h3>
+        <p class="login">Proteksi langsung secara Real-Time pembayaran dan semua transaksi kamu</p>
+    </div>
+    <div class="item login-item">
+        <div class="iconedbox imaged w-75 login">
+            <img src="images/keuntungan.svg" style="height: 11rem">
+        </div>
+        <h3 class="text-light">Keuntungan Melimpah</h3>
+        <p class="login">Banyak layanan murah dan bagus yang membuat dompet kamu tetap aman</p>
+    </div>
+</div>
+<div class="login-form-bottom">
+    <div class="section center mt-1 text-light">
+        <h3 style="font-weight: 400; font-size: 15px;" class="text-light">Masukkan <span class="bold">Nomor HP</span> kamu untuk lanjut.</h3>
+    </div>
+    <div class="section-login">
+        <div class="form-group">
+            <div class="form-control-wrap">
+                <div class="form-icon form-icon-left ml-1">
+                    <img src="images/indonesia.svg" class="imaged w24" style="border: 1px solid #e1e1e1; border-radius: 4px;">
+                    <span class="bold text-dark pl-1">+62</span>
+                </div>
+                <a href="#" data-toggle="modal" data-target="#inputNumberPhone" class="form-control" style="color: #6c757d; padding-left: 4.25rem; border-radius: 15px">812-3456-7890</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade modalbox" id="inputNumberPhone" data-backdrop="static" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content bg-primary">
+            <div class="modal-header bg-primary" style="border-bottom: 0; font-size: 26px;padding:0px 16px;">
+                <div class="appHeader no-border transparent position-absolute text-light bold">
+                    <div class="pageTitle d-flex justify-content-center align-items-center">
+                    <div class="left">
+                        <a href="javascript:;" class="text-light" data-dismiss="modal"><ion-icon name="chevron-back-outline"></ion-icon></a>
+                    </div>
+                           <h3 class="text-center text-white">Verifikasi No Hp</h3>
+                        <!--<img src="https://app.plisspa.id/library/assets/mobile/img/Logo/logo.png?1723880903" alt="logo" class="logo" style="max-height: 70px;">-->
+                    </div>
+                </div>
+                <span> </span>
+            </div>
+            <div class="modal-body-login">
+                <div class="login-form">
+                    <div class="section mb-3">
+                        <form id="FormCheckPhone" method="POST">
+                            <input type="hidden" id="csrf_token" name="csrf_token" value="17eeefb2e487bcf31c997ffb53153e446c0864a662ac1d05ecde2ec47fe6e3ec">
+                                <h4 style="font-weight:400;margin-bottom:24px" class="text-light">Masukkan <span class="bold">Nomor HP</span> kamu untuk lanjut.</h4>
+                            <div class="form-group">
+                                <div class="form-control-wrap">
+                                    <div class="form-icon form-icon-left ml-1">
+                                        <img src="images/indonesia.svg" class="imaged w24" style="border: 1px solid #e1e1e1; border-radius: 4px;">
+                                        <span class="bold text-dark pl-1">+62</span>
+                                    </div>
+                                    <input type="tel" data-inputmask="'mask': '999[-9999][-99999]', 'placeholder': ''" onkeyup="CheckNumber();" class="form-control" id="phone" name="user" style="color: #6c757d; padding-left: 5.10rem; border-radius: 15px" placeholder="812-3456-7890">
+                                </div>
+                            </div>
+                            <div class="form-button-group bg-primary" style="min-height: 55px !important">
+                                <a href="#" data-toggle="modal" data-target="#OTPLogin" class="btn btn-block btn-lg  text-white" style="font-weight: bold; background: transparent !important; font-size: 15px;">Lanjut</a>
+                                <!-- <a href="#" data-toggle="modal" data-target="#OTPLogin">
+                                    <button class="btn btn-block btn-lg  text-white" style="font-weight: bold; background: transparent !important; font-size: 15px;" id="SubmitNumber" disabled="">
+                                </a>Lanjut</button>
+                                <button type="submit" id="SubmitNumber" name="login" class="btn btn-block btn-lg  text-white" style="font-weight: bold; background: transparent !important; font-size: 15px;" disabled=""  onclick="var e=this;setTimeout(function(){e.disabled=true;},0);return true;">Lanjut</button> -->
+                            </div>
+    
+    <div class="modal fade action-sheet" id="OTPLogin" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: #00000080;">
+                <div class="modal-body">
+                    <input type="hidden" id="csrf_token" name="csrf_token" value="17eeefb2e487bcf31c997ffb53153e446c0864a662ac1d05ecde2ec47fe6e3ec">
+                        <div class="form-bottom-fixed pb-0">
+                            <div class="close-pin">
+                                <a href="#" data-dismiss="modal">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </a>
+                            </div>
+                            <div class="form-group basic pb-0">
+                                <div class="input-wrapper"> 
+                                    <img src="images/otp.svg" style="height: 11rem">
+                                </div>
+                            </div>
+                            <button type="submit" id="SubmitNumber" class="btn rounded btn-primary btn-block btn-lg" name="loginWhatsApp" disabled="" onclick="var e=this;setTimeout(function(){e.disabled=true;},0);return true;">Kirim Kode ke WhatsApp
+                            </button>
+                            <center>
+                                <h6>Nomor gak terhubung WhatsApp?
+                                    <button type="submit" id="SubmitNumber2" name="loginEmail" class="btn text-primary p-0" style="font-weight: bold; background: transparent !important; font-size: 11px;" disabled="" onclick="var e=this;setTimeout(function(){e.disabled=true;},0);return true;">Kirim ke email
+                                    </button>
+                                </h6>
+                            </center>
+                        </div>
+                    
+                    </div>
+                    <div class="section center mt-1 text-light">
+                        <p style="font-weight: 400; font-size: 13px" class="text-light">Dengan melanjutkan, kamu setuju dengan <span class="bold">Syarat &amp; Ketentuan</span> dan <span class="bold">Kebijakan Privasi</span> kami</p>
+                    </div>
+                </div>
+            </div>
+        </div></form>
+    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function CheckNumber() {
+        var phone = document.getElementById('phone').value;
+        if(phone.length > 9) {
+            $('#SubmitNumber').prop('disabled', false);
+        } else {
+            $('#SubmitNumber').prop('disabled', true);
+        }
+        if(phone.length > 9) {
+            $('#SubmitNumber2').prop('disabled', false);
+        } else {
+            $('#SubmitNumber2').prop('disabled', true);
+        }
+    }
+</script>        <form method="POST">
+        <div class="modal fade action-sheet" id="register" tabindex="-1" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ayo Daftar Sekarang</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="action-sheet-content">
+                            <input type="hidden" id="csrf_token" name="csrf_token" value="17eeefb2e487bcf31c997ffb53153e446c0864a662ac1d05ecde2ec47fe6e3ec">
+                            <div class="form-group basic">
+                                <div class="input-wrapper">
+                                    <label class="label" for="nameR">Nama Lengkap</label>
+                                    <input type="text" class="form-control" id="nameR" name="name" placeholder="Masukkan Nama Lengkap">
+                                    <i class="clear-input">
+                                        <ion-icon name="close-circle" role="img" class="md hydrated" aria-label="close circle"></ion-icon>
+                                    </i>
+                                </div>
+                            </div>
+                            <div class="form-group basic">
+                                <div class="input-wrapper">
+                                    <label class="label" for="phoneR">Nomor HP (Whatsapp)</label>
+                                    <input type="telp" class="form-control" id="phoneR" name="phone" placeholder="Masukkan Nomor HP">
+                                    <i class="clear-input">
+                                        <ion-icon name="close-circle" role="img" class="md hydrated" aria-label="close circle"></ion-icon>
+                                    </i>
+                                </div>
+                            </div>
+                            <div class="form-group basic">
+                                <div class="input-wrapper">
+                                    <label class="label" for="emailR">Email</label>
+                                    <input type="email" class="form-control" id="emailR" name="email" placeholder="Masukkan Email">
+                                    <i class="clear-input">
+                                        <ion-icon name="close-circle" role="img" class="md hydrated" aria-label="close circle"></ion-icon>
+                                    </i>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a href="javascript:;" class="btn rounded btn-list btn-block btn-lg text-primary m-1 mb-0" data-toggle="modal" data-target="#register" data-dismiss="modal" style="border:1px solid #5f33ba;">Batal</a>
+                                <button type="button" id="regNext" data-toggle="modal" data-target="#registerNext" data-dismiss="modal" class="btn rounded btn-primary btn-block btn-lg m-1 mb-0" disabled="">Lanjutkan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade action-sheet" id="registerNext" tabindex="-1" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="pr-5"></div>
+                        <h5 class="modal-title">Ayo Daftar Sekararang</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="action-sheet-content">
+                            <div class="form-group basic">
+                                <div class="input-wrapper">
+                                    <label class="label" for="pinR">PIN Keamanan</label>
+                                    <input type="password" class="form-control" id="pinR" maxlength="6" name="pin" pattern="[0-9]*" inputmode="numeric" placeholder="Buat PIN Keamanan">
+                                    <i class="clear-input">
+                                        <ion-icon name="close-circle" role="img" class="md hydrated" aria-label="close circle"></ion-icon>
+                                    </i>
+                                </div>
+                            </div>
+                            <div class="form-group basic">
+                                <div class="input-wrapper">
+                                    <label class="label" for="cpinR">Konfirmasi PIN Keamanan</label>
+                                    <input type="password" class="form-control" id="cpinR" maxlength="6" name="cpin" pattern="[0-9]*" inputmode="numeric" placeholder="Konfirmasi PIN Keamanan">
+                                    <i class="clear-input">
+                                        <ion-icon name="close-circle" role="img" class="md hydrated" aria-label="close circle"></ion-icon>
+                                    </i>
+                                </div>
+                            </div>
+                            <div class="form-group basic">
+                                <div class="input-wrapper">
+                                    <label class="label" for="reff">Kode Referral (Opsional)</label>
+                                    <input type="text" class="form-control" id="reff" name="reff" placeholder="Masukkan Kode Refferal kamu">
+                                    <i class="clear-input">
+                                        <ion-icon name="close-circle" role="img" class="md hydrated" aria-label="close circle"></ion-icon>
+                                    </i>
+                                </div>
+                            </div>
+                            <div class="mt-1 text-left">
+                                 <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" name="accepttos" value="true" id="customChecka1">
+                                    <label class="custom-control-label text-warning" for="customChecka1"> Saya Setuju <a href="javascript:;" class="text-dark text-center">Dengan mendaftar saya menyetujui Syarat &amp; Ketentuan serta Kebijakan Privasi kami</a></label>
+                                 </div>
+                            </div>
+                            
+                           <!-- <p class="text-center text-muted text-success">Dengan mendaftar kamu menyetujui Syarat & Ketentuan serta Kebijakan Privasi kami.</p>-->
+                            <div class="d-flex justify-content-between">
+                                <a href="javascript:;" class="btn rounded btn-list btn-block btn-lg text-primary m-1 mb-0" data-toggle="modal" data-target="#register" data-dismiss="modal" style="border:1px solid #5f33ba;">Kembali</a>
+                                <button type="submit" name="reg" class="btn rounded btn-primary btn-block btn-lg m-1 mb-0" id="reg" disabled="">Daftar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+                            </div>
+    </div>
+    <!-- * App Capsule -->
+    
+    <script>
+        $(document).ready(function() {
+            $('#pinR, #cpinR').keyup(function() {
+                var pin = $('#pinR').val().length;
+                var cpin = $('#cpinR').val().length;
+
+                if(pin > 5 && cpin > 5) {
+                    $('#reg').attr('disabled', false);
+                } else {
+                    $('#reg').attr('disabled', true);
+                }
+            });
+            $('#nameR, #emailR, #phoneR').keyup(function() {
+                var name = $('#nameR').val().length;
+                var phone = $('#phoneR').val().length;
+                var email = $('#emailR').val().length;
+
+                if(name > 4 && phone > 9 && email > 5) {
+                    $('#regNext').attr('disabled', false);
+                } else {
+                    $('#regNext').attr('disabled', true);
+                }
+            });
+        });
+    </script>
+
+ 
+<style>
+    .appBottomMenu .item .action-button:before {
+        border: 3px solid red;
+    }
+    .appBottomMenu .item .action-button:after {
+        border: 3px solid red;
+    }
+    .appBottomMenu .item .col.sp {
+        padding: 0;
+    }
+    .appBottomMenu .item .bd {
+        width: 100%;
+        background-color: transparent;
+        border-bottom-left-radius: 100%;
+        border-bottom-right-radius: 100%;
+        border-bottom: 1px solid #FFF;
+        position: relative;
+        bottom: 17px;
+    }
+    .appBottomMenu .item .col strong, .appBottomMenu .item .col ion-icon {
+        color: #afafaf;
+    }
+    .appBottomMenu .item {
+        border-top: 1px solid #FFF;
+    }
+</style>
+
+<script type="text/javascript"> 
+function modal(name,link,foot,size) {
+    $.ajax({
+        type: "GET",
+        url: link,
+        beforeSend: function() {
+            $('#SModal-title').html(name);
+            $('#SModal-body').html('Loading...');
+            $('#SModal-foot').html('');
+            if(size == 'sm' || size == 'small') {
+                $('#SModal-size').addClass('modal-sm');
+                $('#SModal-size').removeClass('modal-lg');
+            } else if(size == 'lg' || size == 'large') {
+                $('#SModal-size').removeClass('modal-sm');
+                $('#SModal-size').addClass('modal-lg');
+            } else {
+                $('#SModal-size').removeClass('modal-sm');
+                $('#SModal-size').removeClass('modal-lg');
+            }
+        },
+        success: function(result) {
+            $('#SModal-title').html(name);
+            $('#SModal-body').html(result);
+            if(foot == null) {
+                $('#SModal-foot').html('<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><button type="button" class="btn btn-success" data-dismiss="modal">OK!</button>');
+            } else {
+                $('#SModal-foot').html(foot);
+            }
+            if(size == 'sm' || size == 'small') {
+                $('#SModal-size').addClass('modal-sm');
+                $('#SModal-size').removeClass('modal-lg');
+            } else if(size == 'lg' || size == 'large') {
+                $('#SModal-size').removeClass('modal-sm');
+                $('#SModal-size').addClass('modal-lg');
+            } else {
+                $('#SModal-size').removeClass('modal-sm');
+                $('#SModal-size').removeClass('modal-lg');
+            }
+        },
+        error: function() {
+            $('#SModal-title').html(name);
+            $('#SModal-body').html('Failed to get contents...');
+            $('#SModal-foot').html('<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button><button type="button" class="btn btn-success" data-dismiss="modal">OK!</button>');
+            if(size == 'sm' || size == 'small') {
+                $('#SModal-size').addClass('modal-sm');
+                $('#SModal-size').removeClass('modal-lg');
+            } else if(size == 'lg' || size == 'large') {
+                $('#SModal-size').removeClass('modal-sm');
+                $('#SModal-size').addClass('modal-lg');
+            } else {
+                $('#SModal-size').removeClass('modal-sm');
+                $('#SModal-size').removeClass('modal-lg');
+            }
+        }
+    });
+    $('#SModal').modal();
+}
+function modalKonfirmasi(name,link) {
+    $.ajax({
+        type: "GET",
+        url: link,
+        beforeSend: function() {
+            $('#RGSModal-title').html(name);
+            $('#RGSModal-body').html('<div id="loader"><div class="spinner-border text-primary" role="status"></div></div>');
+        },
+        success: function(result) {
+            setTimeout( () => {
+                $('#RGSModal-title').html(name);
+                $('#RGSModal-body').html(result);
+            }, 2000);
+        },
+        error: function() {
+            $('#RGSModal-title').html(name);
+            $('#RGSModal-body').html('Failed to get contents...');
+        }
+    });
+    $('#RGSModal').modal();
+}
+</script>
+
+    <!-- Modal Konfirmasi -->
+    <div class="modal fade modalbox rgs-modal-konfirmasi" id="RGSModal" data-backdrop="static" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="left">
+                        <a href="javascript:;" data-dismiss="modal" class="headerButton">
+                            <ion-icon name="chevron-back-outline" class="text-light"></ion-icon>
+                            <div class="modal-title" id="RGSModal-title"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-body rgs-konfirmasi" id="RGSModal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- * Modal Konfirmasi -->
+    
+    <div class="modal fade bd-example-modal-lg" id="SModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document" id="SModal-size">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="SModal-title"></h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">×</span>
+               </button>
+            </div>
+            <div class="modal-body" id="SModal-body"></div>
+            <div class="modal-footer" id="SModal-foot"></div>
+         </div>
+      </div>
+    </div>
+    <!-- ///////////// Js Files ////////////////////  -->
+    <script type="module" src="js/ionicons.js"></script>
+    <!-- Owl Carousel -->
+    <script src="js/jquery.marquee.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- jQuery Circle Progress -->
+    <script src="js/circle-progress.min.js"></script>
+    <!-- Base Js File -->
+        <script src="js/inputmask.min.js"></script>
+    <script src="js/inputmask.binding.js"></script>
+
+    <script src="js/base.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.marquee').marquee({
+                duration: 4100,
+                delayBeforeStart: 1500,
+                direction: 'left',
+            });
+
+            if($('#successResult').length) {
+                $('#successResult').modal('show');
+            } else if($('#errorResult').length) {
+                $('#errorResult').modal('show');
+            }
+        });
+    </script>
+    <script>
+        $('#name, #nohp').keyup(function() {
+            var name = $('#name').val().length;
+            var nohp = $('#nohp').val().length;
+            if(name > 4 && nohp > 10) {
+                $('#next-step').attr('disabled', false);
+            } else {
+                $('#next-step').attr('disabled', true);
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        function depositNominal(value) {
+            $('input[name="nominal"]').val(value);
+        }
+        function copyToClipboard(value) {
+            var tempInput = document.createElement('input');
+            tempInput.value = value;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            toastbox('toastCopy', 1000).show();
+        }
+        function Loader() {
+            $('body').html('<div id="loader"><div class="spinner-border text-primary" role="status"></div></div>');
+        }
+        function disabled() {
+            var e = this;
+            setTimeout(function(){
+                e.disabled=true;
+            }, 0);
+            return true;
+        }
+    </script>
+    <script>
+    function goBack() {
+        window.history.back();
+    }
+    </script>
+    <script>
+        const actualBtn = document.getElementById('actual-btn');
+        const fileChosen = document.getElementById('file-chosen');
+        actualBtn.addEventListener('change', function(){
+          fileChosen.textContent = this.files[0].name
+        })
+    </script>
+    
+    <div id="toastCopy" class="toast-box toast-center bg-secondary">
+        <div class="in">
+            <div class="text">
+                Berhasil Salin Ke Clipboard
+            </div>
+        </div>
+    </div>
+    
+    <div id="toastComingSoon" class="toast-box toast-center bg-secondary">
+        <div class="in">
+            <div class="text">
+                Coming Soon...
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        $('#rp').owlCarousel({
+            loop: false,
+            margin: 12,
+            nav: false,
+            items: 2,
+            dots: false,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 2,
+                },
+                768: {
+                    items: 4,
+                }
+            }
+        });
+    </script>
+    
+
+
+</body></html>
